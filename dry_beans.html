@@ -4,7 +4,8 @@
 
 <title>dry_beans</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script type="text/javascript" nonce="0f47e9c3bca04facb36abc5a8d4" src="//local.adguard.org?ts=1632994188408&amp;type=content-script&amp;dmn=colab.research.google.com&amp;app=com.apple.Safari&amp;css=1&amp;js=1&amp;gcss=1&amp;rel=1&amp;rji=1&amp;sbe=0"></script>
+<script type="text/javascript" nonce="0f47e9c3bca04facb36abc5a8d4" src="//local.adguard.org?ts=1632994188408&amp;name=AdGuard%20Extra&amp;type=user-script"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
@@ -13189,7 +13190,7 @@ $( document ).ready(code_toggle);
 <p>In the original study[11], the authors propose a novel dataset and a computer vision system that extracts features from images of beans and eases the classification process. Seed quality is essential for crop production and marketing purposes, but, as the authors specify, dry beans cultivation in Turkey is often of mixed species. This kind of cultivation (referred to as population cultivation) could be disadvantageous for the producer if the beans species are not separated before entering the market, reducing their value. A possible solution could be to manually identify and label the mixed bean population, but this requires time resources and it is error-prone. However, since dry bean varieties (and therefore their value) are determined by considering the form, shape, type, structure given by the Turkish Standards Institute and the market situation, the authors' computer vision system extracts dimensional and shape features in line with the product parameters that will determine the beans price. The seven most well known Turkish dry bean varieties are: <strong>Barbunya</strong>, <strong>Bombay</strong>, <strong>Cali</strong>, <strong>Dermason</strong>, <strong>Horoz</strong>, <strong>Seker</strong> and <strong>Sira</strong>. Below there is a brief description and an image of each species as reported in the original study.</p>
 <p><img src="https://raw.githubusercontent.com/RoboTuan/MML/main/Images/varieties.jpg" alt="varieties"></p>
 <ul>
-<li><strong>Cali</strong>: it is white in color, its seeds are slightly plump and slightly larger and have shape of kidney.</li>
+<li><strong>Cali</strong>: it is white in color, its seeds are slightly plump and slightly larger and have tha shape of a kidney.</li>
 <li><strong>Horoz</strong>: dry beans of this type are long, cylindrical, white in color and generally medium in size.</li>
 <li><strong>Dermason</strong>: this type of dry beans, which are fuller flat, is white in color and one end is round and the other ends are round.</li>
 <li><strong>Seker</strong>: large seeds, white in color, physical shape is round.</li>
@@ -13197,7 +13198,7 @@ $( document ).ready(code_toggle);
 <li><strong>Barbunya</strong>: beige-colored background with red stripes or variegated, speckled color, its seeds are large, physical shape is oval close to the round.</li>
 <li><strong>Sira</strong>: its seeds are small, white in color, physical structure is flat, one end is flat, and the other end is round.  </li>
 </ul>
-<p>Since we can translate this problem into a multiclass classification one, it is possible to use machine learning techniques to classify dry bean seeds by exploiting the features extracted by the authors of the dataset. As it is stated in their work, <strong>they obtained one kilogram of the seven varieties from certified seed producers</strong>. Then, they took pictures of the dry beans by using their special system (for ideal illumination) by placing multiple seeds of the same species together. From the 236 images, there were segmented 13,611 dry bean samples. The image processing pipeline includes shadow, background and noise removal prior to the bean segmentation (separating the beans in the same image). Finally, the images are first converted into grayscale and then to binary. As written in their study, this process does not compromise the quality of prediction since, as we can see from the previous image, the different seed varieties do not have distinctive color features. Below the extracted features with a brief description are presented. They consist of 12 dimensional and 4 shape features for each dry bean (a total of 16), their values are in number of pixels.</p>
+<p>Since we can translate this problem into a multiclass classification one, it is possible to use machine learning techniques to classify dry bean seeds exploiting the features extracted by the authors of the dataset. As it is stated in their work, <strong>they obtained one kilogram of the seven varieties from certified seed producers</strong>. Then, they took pictures of the dry beans by using their special system (for ideal illumination) by placing multiple seeds of the same species together. From the 236 images, there were segmented 13,611 dry bean samples. The image processing pipeline includes shadow, background and noise removal prior to the bean segmentation (separating the beans in the same image). Finally, the images are first converted into grayscale and then to binary. As written in their study, this process does not compromise the quality of prediction since, as we can see from the previous image, the different seed varieties do not have distinctive color features. Below the extracted features with a brief description are presented. They consist of 12 dimensional and 4 shape features for each dry bean (a total of 16), their values are in number of pixels.</p>
 <ol>
 <li><strong>Area</strong> (<strong>A</strong>): The area of a bean zone and the number of pixels within its boundaries.   </li>
 <li><strong>Perimeter</strong> (<strong>P</strong>): Bean circumference is defined as the length of its border.</li>
@@ -13206,7 +13207,7 @@ $( document ).ready(code_toggle);
 <li><p><strong>Aspect ratio</strong> (<strong>K</strong>): Defines the relationship between <strong>L</strong> and <strong>l</strong>.<br>
 $K = \frac{L}{l}$</p>
 </li>
-<li><p><strong>Eccentricity</strong> (<strong>Ec</strong>): Eccentricity of the ellipse having the same moments as the region.</p>
+<li><p><strong>Eccentricity</strong> (<strong>Ec</strong>): Eccentricity of the ellipse .</p>
 </li>
 <li><strong>Convex area</strong> (<strong>C</strong>): Number of pixels in the smallest convex polygon that can contain the area of a bean seed.</li>
 <li><p><strong>Equivalent diameter</strong> (<strong>Ed</strong>): The diameter of a circle having the same area as a bean seed area.<br>
@@ -13239,7 +13240,7 @@ $CO = \frac{Ed}{L}$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">uninstall</span> <span class="o">--</span><span class="n">quiet</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="o">-</span><span class="n">y</span>
@@ -13256,12 +13257,12 @@ $CO = \frac{Ed}{L}$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1"># check scikit-learn and version</span>
 <span class="kn">import</span> <span class="nn">sklearn</span>
-<span class="c1">#print(&#39;sklearn: %s&#39; % sklearn.__version__)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;sklearn: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13345,7 +13346,7 @@ $CO = \frac{Ed}{L}$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The dataset does not contain any missing values and has only real and integer (counting the number of pixels) variables. Before performing any analysis, the dataset was split into a training and a test set with a ratio of $70/30$. The stratified sampling assures that the relative class frequencies are approximately preserved[12] in the splitted data. All the following techniques were applied only on the training set, while the test data was preserved untouched until the final evaluation.</p>
+<p>The dataset does not contain any missing values and has only real and integer (counting the number of pixels) variables. Before performing any analysis, the dataset was split into a training and a test set with a ratio of $70/30$. The stratified sampling assures that the relative class frequencies are approximately preserved[1] in the splitted data. All the following techniques were applied only on the training set, while the test data was preserved untouched until the final evaluation.</p>
 
 </div>
 </div>
@@ -14069,7 +14070,7 @@ Mean seed area for bombay beans: 173260.26 pixels
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Isolation Forest</em>[13] is a model-based method that explicitly isolates anomalies instead of profiling normal instances. The authors state that this method takes advantage of the assumption that anomalies consist of fewer instances and they have attribute values that are very different from those of normal instances.<br>
+<p><em>Isolation Forest</em>[12] is a model-based method that explicitly isolates anomalies instead of profiling normal instances. The authors state that this method takes advantage of the assumption that anomalies consist of fewer instances and they have attribute values that are very different from those of normal instances.<br>
 It selects a random subsample of our data for each <em>isolation tree</em> and, for each of those, it recursively partitions the data space as follows. We randomly select a random attribute and a random cut-point for the split, until all instances are isolated, a height limit is reached or the remaining instances all have the same value. If a point was isolated with few partitions, it will be nearer to the root of the tree and thus, anomalies have shorter path lengths. Instead of relying on just one tree, we create an ensamble of trees for obtaining more robust path lengths by averaging among all the trees.<br>
 The algorithm returns an anomaly score $s$ interpretable as follows:</p>
 <ul>
@@ -14088,7 +14089,10 @@ With a threshold of $10 \%$, it is possible to see from the following <em>boxplo
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">IF</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">contamination</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># import warnings</span>
+<span class="c1"># warnings.filterwarnings(&quot;ignore&quot;, category=UserWarning)</span>
+
+<span class="n">IF</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">contamination</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">outliers_X_train</span> <span class="o">=</span> <span class="n">IF</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Outliers detected with isolation forest: {np.count_nonzero(outliers_X_train == -1)}&quot;</span><span class="p">)</span>
 <span class="c1">#np.count_nonzero(outliers_X_train == -1) * 100 / X_train.shape[0]</span>
@@ -14122,20 +14126,6 @@ With a threshold of $10 \%$, it is possible to see from the following <em>boxplo
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.7/dist-packages/sklearn/base.py:442: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
-  &#34;X does not have valid feature names, but&#34;
-/usr/local/lib/python3.7/dist-packages/sklearn/base.py:442: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
-  &#34;X does not have valid feature names, but&#34;
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -14189,7 +14179,7 @@ With a threshold of $10 \%$, it is possible to see from the following <em>boxplo
 $$
 \rho_{X, Y} = \frac{cov(X,Y)}{\sigma_X \sigma_Y}
 $$
-where $X, Y$ are two feature vectors, $cov(X,Y)$ is their sample covariance and $\sigma_X \sigma_Y$ their sample standard deviation. Each of these coefficients lives in the range $[-1, +1]$. If it is near zero, the two feature vectors are not correlated, while, if it is near plus or minus one they are strongly correlated. When the correlation is positive, the linear relationship is direct, while if it is negative, the relationship is inverse.<br>
+where $X, Y$ are two feature vectors, $cov(X,Y)$ is their sample covariance and $\sigma_X$, $\sigma_Y$ their sample standard deviation. Each of these coefficients lives in the range $[-1, +1]$. If it is near zero, the two feature vectors are not correlated, while, if it is near plus or minus one they are strongly correlated. When the correlation is positive, the linear relationship is direct, while if it is negative, the relationship is inverse.<br>
 In this case-study, several feature vectors are correlated. However, instead of using this tool for feature selection, <strong>PCA</strong> will be applied to the entire dataset. Then, a satisfying number of <strong>principal components</strong> will be chosen as new predictors.</p>
 
 </div>
@@ -14263,8 +14253,7 @@ In this case-study, several feature vectors are correlated. However, instead of 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Both the mean and standard deviation vary greatly among the features. As mentioned in [9], in distance-based algorithms, having the same scale between the features is fundamental since it avoids assigning more importance on attributes with a broader range and leads to equal footing. On top of this, gradient based implementations converge much faster with feature scaling rather than without (since we wouldn't have abnormal weight updating for features with a broader range).
-The data has been standardized as follows: 
+<p>Both the mean and standard deviation vary greatly among the features. As mentioned in [9], in distance-based algorithms, having the same scale between the features is fundamental since it avoids assigning more importance on attributes with a broader range and leads to equal footing. On top of this, gradient based implementations converge much faster with feature scaling rather than without. The data has been standardized as follows: 
 $$
 x' = \frac{x- \bar x}{\sigma}
 $$
@@ -14406,7 +14395,7 @@ In the next paragraphs <strong>Smote</strong> and <strong>RUS</strong> are prese
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since the minority class (<em>Bombay</em>) accounts for less than 4% of the total samples, while, the majority one (<em>Dermason</em>), for more than 26%, <strong>RUS</strong> and <strong>SMOTE</strong> were combined not to generate too many artificial samples. On top of this, <em>data leakage</em> must be prevented. This occurs when information that would not be available at prediction time is used when building the model, as stated in [5]. In particular, we want to maintain the distribution of the test set untouched. This has already been taken care of by splitting the data at the beginning, but the same reasoning must be applied also in the cross-validation process. To summarize, in each cross-validation iteration, the $(k-1)$ folds that serve as training data will be balanced, while the left out one will have the original distribution of the data. This is done to mimic the behaviour of the real data, otherwise, we would be evaluating the models on a distribution that is not representative of the testing environment[8]. Another issue is that, during the same cross-validation iteration, if both the training and validation data were to be balanced, depending on the resampling procedure, it would be possible to encounter the same sample in both the training and validation sets, inflating the scores.  This was handled with the <em>Pipeline</em> object of the <em>Imbalanced-Learn</em> Python library. This process is summarized by the following picture[14] in a binary classification case, where the left part is wrong, while the right one is the correct procedure.</p>
+<p>Since the minority class (<em>Bombay</em>) accounts for less than 4% of the total samples, while, the majority one (<em>Dermason</em>), for more than 26%, <strong>RUS</strong> and <strong>SMOTE</strong> were combined not to generate too many artificial samples. On top of this, <em>data leakage</em> must be prevented. This occurs when information that would not be available at prediction time is used when building the model, as stated in [5]. In particular, we want to maintain the distribution of the test set untouched. This has already been taken care of by splitting the data at the beginning, but the same reasoning must be applied also in the cross-validation process. To summarize, in each cross-validation iteration, the $(k-1)$ folds that serve as training data will be balanced, while the left out one will have the original distribution of the data. This is done to mimic the behaviour of the real data, otherwise, we would be evaluating the models on a distribution that is not representative of the testing environment[8]. Another issue is that, during the same cross-validation iteration, if both the training and validation data were to be balanced, depending on the resampling procedure, it would be possible to encounter the same sample in both the training and validation sets, inflating the scores.  This was handled with the <em>Pipeline</em> object of the <em>Imbalanced-Learn</em> Python library. This process is summarized by the following picture[13] in a binary classification case, where the left part is wrong, while the right one is the correct procedure.</p>
 <p><img src="https://raw.githubusercontent.com/RoboTuan/MML/main/Images/wrongVSright_cv.jpg" alt="wrong-vs-right"></p>
 <p>Bearing all this in mind, the same approach of work [7] was followed for combining the two resampling methods. After computing the mean class cardinality, those classes that have more samples than this mean will be under-sampled, the contrary applies to the classes that have less samples. This has to be done in each iteration split with the effective class data cardinality. Since the samples are sampled in a stratified fashion for cross-validation, the mean for each iteration becomes: $\frac{(K - 1) \  \times \  mean\_class\_cardinality}{K}=1088$ with $K$ the number of cross-validation iterations. The classes (<em>Dermason</em>, <em>Sira</em>, <em>Seker</em>) that have more samples than this number are under-sampled so that they reach 1088 samples. Now, since the previous classes represent the new majority ones, it is possible to apply <strong>SMOTE</strong> on all but the majority classes. In the end, at each iteration, there will be $1088$ samples for each class.</p>
 
@@ -14423,7 +14412,7 @@ In the next paragraphs <strong>Smote</strong> and <strong>RUS</strong> are prese
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>All the issues that arise when we deal with high dimensional data are often subsumed as <em>\"the curse of dimensionality\"</em>. Rather than a matter of computational complexity, this phenomenon is about the geometrical structure of the space when the dimension is high. For instance, if we assume that our data lies in $[0, 1]^p$, to capture a fraction $s$ of the total hypercube volume we would need an edge of length $s^{\frac{1}{p}}$. This implies that to capture $10\%$ of the volume in a 10-dimensional hypercube, the edges must preserve $80\%$ of the original length. The consequences are that, in high dimensional spaces, points are isolated (space has a filament-like structure, is difficult to sample around it) and, therefore, neighbourhoods are no longer local.<br>
+<p>All the issues that arise when we deal with high dimensional data are often subsumed as <em>the curse of dimensionality</em>. Rather than a matter of computational complexity, this phenomenon is about the geometrical structure of the space when the dimension is high. For instance, if we assume that our data lies in $[0, 1]^p$, to capture a fraction $s$ of the total hypercube volume we would need an edge of length $s^{\frac{1}{p}}$. This implies that, to capture $10\%$ of the volume in a 10-dimensional hypercube, the edges must preserve $80\%$ of the original length. The consequences are that, in high dimensional spaces, points are isolated (space has a filament-like structure, is difficult to sample around it) and, therefore, neighbourhoods are no longer local.<br>
 Among others, <strong>Principal Component Analysis</strong> is a commonly used technique to reduce the dimensionality of the data by means of linear mappings. Let $\pmb x_1, \pmb x_2, ..., \pmb x_m$ be the original vectors in $R^d$, we would like to find the matrix $W \in R^{n,d}$ with $n \lt d$ such that it induces the mapping $\pmb x \mapsto W \pmb x$ with $\pmb y = W \pmb x \in R^n$ being the lower representation of the data. On top of this, a second matrix $U \in R^{d,n}$ has to be computed so that we can reconstruct $\pmb x$ from the compressed vector $\pmb y$ as $\pmb{\tilde x} = U \pmb y$, with $\tilde x \in R^d$. Intuitively we would like to find a good low dimensional representation for our data so that $UV \approx I$.<br>
 We can express this as a minimization problem where we retrieve a compression and reconstruction matrix for which the total squared distance (measuring the approximate recovery) between the original and recovered vectors is minimal:
 $$
@@ -14444,7 +14433,7 @@ If we define the scatter matrix as $A=\sum_{i=1}^{m} \pmb x_i \pmb x_i^T$, let t
 \end{equation}
 The constraint ensures a convex domain so that we do not increase indefinitely the objective only by increasing the elements of the <strong>loading vectors</strong> that would result in an arbitrary large variance. The solution yields that $A \pmb\phi_1 = \lambda \pmb\phi_1$, with $\lambda$ being the Lagrangian multiplier associated to the equality constraint. This means that the <strong>loading vector</strong> is the eigenvector of $A$ associated to the eigenvalue $\lambda$. Since $\pmb\phi_1$ was constrained to have a unit norm, in the end, what we have to maximize is just $\lambda$, which is therefore equal to the variance explained by $\pmb{pc}_1$. Consequently, the solution is the eigenvector associated with the largest eigenvalue, which is unsurprisingly the same as that of the previous <strong>PCA</strong> formulation.<br>
 For the remaining <strong>principal components</strong>, we solve iteratively the same problem, but with the following additional constraints: $\pmb\phi_i^T A \pmb\phi_j=0 \quad \forall j \lt i$ to ensure that the <strong>loading vectors</strong> are uncorrelated (orthogonal). Hence, they represent the direction in which the feature space varies the most.</p>
-<p>The notion of <strong>principal components</strong> lets us introduce the <em>scree plot</em>.Recalling that the total variance is equal to $trace(A)$ but also $\sum_{i=1}^d \lambda_i$, the <em>scree plot</em> is a Pareto chart where the bars identify the proportion of variance explained by each <strong>principal component</strong> namely $\frac{\lambda_i}{\sum_{i=1}^d \lambda_i}$, while the dotted line identifies the cumulative proportional variance up to a certain <strong>principal component</strong> $k$ namely $\frac{\sum_{i=1}^k \lambda_i}{\sum_{i=1}^d \lambda_i}$. As it is possible to see from the picture below, this chart can help us understand how many <strong>principal components</strong> retain for the rest of our analysis. In this case, 5 principal components were retained, accounting for almost all of the explained variance.</p>
+<p>The notion of <strong>principal components</strong> lets us introduce the <em>scree plot</em>. Recalling that the total variance is equal to $trace(A)$ but also $\sum_{i=1}^d \lambda_i$, the <em>scree plot</em> is a Pareto chart where the bars identify the proportion of variance explained by each <strong>principal component</strong> namely $\frac{\lambda_i}{\sum_{i=1}^d \lambda_i}$, while the dotted line identifies the cumulative proportional variance up to a certain <strong>principal component</strong> $k$ namely $\frac{\sum_{i=1}^k \lambda_i}{\sum_{i=1}^d \lambda_i}$. As it is possible to see from the picture below, this chart can help us understand how many <strong>principal components</strong> retain for the rest of our analysis. In this case, 5 principal components were retained, accounting for almost all of the explained variance.</p>
 <p><img src="https://raw.githubusercontent.com/RoboTuan/MML/main/Images/scree_plot.png" alt="scree-plot"></p>
 <p>The original features may indeed have some sort of correlation. If instead of performing the <strong>PCA</strong>, we just removed one variable, we would kill an unknown amount of variance. The variance explained by this variable but also the variance related to the covariance with the other ones. When we work with the <strong>PCA</strong>, we create a linear combination of the initial features, the <strong>principal components</strong> which are uncorrelated and allow us to work in a very controlled way. But we pay a price in terms of interpretability since what we have created is a mathematical construct, something that is difficult to assign a meaning unlike for the original features.</p>
 
@@ -14619,6 +14608,156 @@ With the <em>Scikit-Learn</em> library, it is possible to specify the <em>strati
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SVM">SVM<a class="anchor-link" href="#SVM">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section, the <strong>Support Vector Machines (SVM)</strong> learning paradigm is discussed. Different formulations are reviewed, relaxing step by step the assumptions about the data.</p>
+<p>The fundamental formulation of this tool is known as <strong>hard-svm</strong>, which assumes a rather strong assumption, that is, the linear separability of our data. Let $S = \{\pmb x_i, y_i \}_{i=1}^m$ be the training set of size $m$, where $\pmb x_i \in R^d$ and $y_i \in \{ -1, +1 \}$ (the generalization to a multiclass scenario will be explained later), the previous assumption can be stated as follows: $ \exists \, \pmb w \in R^d, b \in R : y_i\langle \pmb{w}, \pmb x_i \rangle + b \gt 0 \quad \forall i=1,..,m$.<br>
+Now is clear that we seek to find a hyperplane (to which $\pmb w$ is perpendicular and thus parametrizes it) that <em>better</em> separates the two classes. If there exists one hyperplane, there exist infinitely many. Instead of just picking one of the possible feasible solutions of the <strong>halfspace</strong> linear program, we seek to find a hyperplane so that the points in the distribution are the furthest possible. In particular, we want to maximize the <strong>margin</strong> which is the minimum distance between the points and the hyperplane itself (those points that are at the minimal distance from the separating hyperplane will later have an important role). The motivation is that the points are drawn from a probability distribution, there is a level of uncertainty of being at a specific position or there could be also noise. Consequently, the more room I have between the hyperplane and the points, the more they can move (or when new points arrive) and remain separated. It can be shown that the distance between a point $\pmb x$ and the hyperplane defined by $(\pmb w, b)$ is $\mid \langle \pmb{w}, \pmb x_i\rangle + b \mid$ when $\| \pmb w\|=1$. By putting all of this together we can derive the following formulation:
+\begin{equation}
+\begin{aligned}
+\underset{(\pmb w, b): \| w\|=1}{argmax} min_{i \in [m]} \quad &amp; \mid \langle \pmb{w}, \pmb x_i\rangle + b \mid\\
+\textrm{s.t.} \quad &amp; y_i(\langle \pmb{w}, \pmb x_i\rangle + b) \gt 0 \quad \forall i
+\end{aligned}
+\end{equation}
+which is equivalent to:
+\begin{equation}
+\begin{aligned}
+\underset{(\pmb w, b): \| w\|=1}{argmax} min_{i \in [m]} \quad &amp; y_i(\langle \pmb{w}, \pmb x_i\rangle + b)\\
+\end{aligned}
+\end{equation}
+It can be proved that this can be rewritten as a quadratic optimization problem (the objective is a convex quadratic function and the constraints are linear inequalities) which is more convenient and will come in handy later: 
+\begin{equation}
+\begin{aligned}
+(\pmb w_0, b_0) = 
+\underset{(\pmb w, b)}{argmin} \quad &amp; \| \pmb w\|^2 \\
+\textrm{s.t.} \quad &amp; y_i(\langle \pmb{w}, \pmb x_i\rangle + b) \geq 1 \quad \forall i
+\end{aligned}
+\end{equation}</p>
+<p>then, the <strong>margin</strong> parametrized by $\pmb{\hat{w}} = \frac{\pmb w_0}{\| \pmb w_0 \|}$ and $\pmb{\hat{b}} = \frac{b_0}{\| \pmb w_0 \|}$ is $\frac{1}{\| \pmb w_0 \|}$. The picture below shows this process (black is better).<br>
+<img src="https://raw.githubusercontent.com/RoboTuan/MML/main/Images/hard_svm.png" alt="hard_svm"></p>
+<p>A noteworthy observation is that the <strong>margin</strong>, $\gamma$, is scale sensitive. If we were to multiply each example $\pmb x_i$ in our dataset by $\alpha \gt 0$, the obtained <strong>margin</strong> which discriminates our linearly separable data would be of $\alpha \gamma$. In particular, the following holds true: a distribution over $R^d \times \{ \pm 1 \}$ is separable with a $(\gamma, \rho)$-margin if there exist a hyperplane parametrized by $(\pmb w^*, b^*)$ subject to $\| \pmb w\|=1$
+such that, with probability 1 over the choice of $(\pmb x, y)$ belonging to $D$, we have that $y(\langle \pmb w^*, \pmb x\rangle + b^*) \geq \gamma$ and $\| \pmb x \| \leq \rho$. The two inequalities respectively indicate data separability and that the examples are contained in a hyperball with radius $\rho$.<br>
+An important consequence of the previous statement is that, if a distribution $D$ is $(\gamma, \rho)$-margin, the sample complexity of the <strong>hard-svm</strong> does not depend on the dimension $d$, but on the square of the ratio $\frac{\rho}{\gamma}$.</p>
+<p>Up to this point, we have always assumed that the data was linearly separable. It is possible now to relax this constraint to yield what is known as <strong>soft-svm</strong>:
+\begin{equation}
+\begin{aligned}
+\underset{(\pmb w, b, \xi)}{argmin} \quad &amp; \lambda \| \pmb w \|^2 + \frac{1}{m}\sum_{i=1}^m \xi_i \\
+\textrm{s.t.} \quad &amp; y_i(\langle \pmb{w}, \pmb x_i\rangle + b) \geq 1 - \xi_i , \, \xi_i \geq 0 \quad \forall i
+\end{aligned}
+\end{equation}<br>
+Each sample is associated to a <em>slack</em> variable $\xi_i$. With this formulation, points can penetrate the margin, or even go on the other (wrong) side of the hyperplane. Intuitively, we could think of the <em>slack</em> variables as tolls, fines that we pay when the margin is crossed. In the context of <em>Scikit-Learn</em>, these slack variables are controlled by a hyperparameter $C$. The lower it is, the more mistakes are going to be allowed.<br>
+This problem can be rewritten as a <strong>regularized loss minimization (RLM)</strong> one:</p>
+$$
+\underset{(\pmb w, b)}{argmin} \quad \bigg( \lambda \| \pmb w \|^2 + L_S^{hinge}((\pmb w, b)) \bigg)
+$$<p><br>
+where we define $l^{hinge}((\pmb w, b), (\pmb x, y)) = \max \{ 0, 1 - y(\langle \pmb w, \pmb x \rangle + b) \}$</p>
+<p>and thus  $L_S^{hinge}((\pmb w, b)) = \mathbb{E}_S[l^{hinge}((\pmb w, b), (\pmb x, y))] = \frac{1}{m} \sum_{i=1}^m \max \{ 0, 1 - y_i(\langle \pmb w, \pmb x_i \rangle + b) \}$. 
+In this context, the <em>hinge loss</em> is a surrogate loss for the <em>zero-one loss</em>. It is a convex function and upper bounds the original loss.<br>
+<img src="https://raw.githubusercontent.com/RoboTuan/MML/main/Images/surrogate_loss.png" alt="surrogate_loss"></p>
+<p>We can now develop the dual formulation of the <strong>hard-svm</strong>. For simplicity, consider the homogeneous halfpace version by adding a feature to each of the $\pmb x_i$ and thus, increasing the dimension to $d+1$. As a consequence of the <em>Fritz John lemma</em>, we can rewrite the solution of the <strong>hard-svm</strong> problem, $\pmb w_0$ as a linear combination of the <strong>support vectors</strong>. Those are the vectors which lie on the margin such that: $\pmb w_0 = \sum_{i \in I} \alpha_i \pmb x_i$, with $\alpha_1, ..., \alpha_m \in R$ and $I = \{ i : | \langle \pmb w_0, \pmb{x} \rangle | = 1\}$. With the help of an auxiliary function that allows us to embed the constraints of the (primal) <strong>hard-svm</strong> into the objective function, it is possible to specify the dual as:
+$$
+\max_{\pmb \alpha \in R^m : \pmb \alpha \geq 0} \min_{\pmb w}
+\bigg( \frac{1}{2} \| \pmb w \|^2 + \sum_{i=1}^m \alpha_i(1-y_i \langle \pmb w, \pmb x_i \rangle) \bigg).
+$$
+By solving the inner minimization problem, it turns out that the solution is in the linear span of the examples, namely $\pmb w = \sum_{i=1}^m \alpha_i y_i \pmb x_i$. In particular, if a coefficient $\alpha_i$ is not associated to a <strong>support vector</strong>, it will be zero. It is possible to write the problem of svm in terms of scalar products of our data:
+$$
+\max_{\pmb \alpha \in R^m : \pmb \alpha \geq 0}
+\sum_{i=0}^m \alpha_i - \frac{1}{2} \sum_{i,j=0}^m \alpha_i \alpha_j y_i y_j
+\langle \pmb x_i, \pmb x_j \rangle
+$$
+we can now think of this as a parametric problem and define the Gram matrix $G$ such that $G_{i,j} = \langle \pmb x_i, \pmb x_j \rangle$. This is the powerful formulation that inspired the <strong>kernel</strong> method.</p>
+<p>It is not uncommon to have data that lives in a space which, not only is not linearly separable but also presents a highly convoluted manifold (figure[14] below). One solution could be mapping the features of our data into a space of higher dimensions, hoping that it would be possible to find a linear separator in that space. In this way, it would not be unlikely to end up in a high dimensional space, with all the problems related to computational complexity and the curse of dimensionality. We can now understand how to avoid this by exploiting the previous results.<br>
+<img src="https://raw.githubusercontent.com/RoboTuan/MML/main/Images/mapping.png" alt="mapping"></p>
+<p>Let $\psi : X \mapsto F$ be the mapping to some feature space $F$, formally a subset of a Hilbert space. For such mapping $\psi$, define a <strong>kernel</strong> $K$ as a function that implements inner product in the feature space, namely: $K(\pmb x, \pmb x') = \langle \psi(\pmb x), \psi(\pmb x') \rangle$. Informally, one could think of $K$ as a similarity function between the examples of our data and of the embedding $\psi$ as the mapping into a space where these similarities are computed as scalar products.<br>
+Considering the following learning rule:
+$$
+\pmb w^* = argmin_{\pmb w} f(\langle \pmb w, \psi(\pmb x_1) \rangle, ..., \langle \pmb w, \psi(\pmb x_m) \rangle) + \lambda \| \pmb w \|^2
+$$
+where $f : R^m \mapsto R$. Then, the <em>representer theorem</em> states that $\exists \; \pmb \alpha \in R^m$ such that $\pmb w^* = \sum_{i=0}^m \alpha_i \psi(\pmb x_i)$ with $\pmb w^* \in F$. Since the svm can be written as the previous learning rule, it means that  when a mapping $\psi$, as defined above, is applied to our data, it is possible to write the solution as a linear combination of the mapped data. Applying the same reasoning as in the dual problem, we can now write everything in terms of inner products, not between the original data points, but the mapped ones. Namely, we need to substitute $\langle \pmb x_i, \pmb x_j \rangle$ with the inner product computed in the Hilbert space $\langle \psi(\pmb x_i), \psi(\pmb x_j) \rangle_F$, the same applies to the Gram matrix. Since this matrix only depends on the inner products, it can be computed by using $K$. In other words, instead of computing $\psi$, since only the inner products among those mappings are needed, we seek to find a function $K$ that <em>mimics</em> this. One may ask when a function defined in the space of our data can be realised as inner product in some Hilbert space. The <em>mercer</em> theorem tells us if a function is actually a <strong>kernel</strong>.<br>
+A symmetric function $k : X \times X \mapsto R$ implements an inner product in some Hilbert space if and only if it is positive semidefinite. This translates into $G_{i,j}=K(\pmb x_i, \pmb x_j)$ being a positive semidefinite matrix.<br>
+A shortcoming of this approach is that if we were to have a huge amount of data, we would again introduce the curse of dimensionality. Since the solution exploits a linear combination of our original data, the number of instances is not to underestimate. It is true that the relevant points for the svm are only the <strong>support vectors</strong>, but they are not known apriori.</p>
+<p>In this work, the adopted <strong>kernel</strong> is the <em>Gaussian</em> (or <em>rbf</em>) one. It is defined as follows:
+$$
+K(\pmb x, \pmb x') = e^{- \frac{\| \pmb x - \pmb x' \|^2}{2 \sigma}}.
+$$
+This <strong>kernel</strong> sets the inner product in the feature space close to zero if the instances are far away in the original domain, otherwise close to one if they are sufficiently <em>close</em>. The parameter $\sigma$ defines how far the influence of a single training example impacts this relationship. In <em>Scikit-Learn</em> this is controlled by $\gamma$ which is inversely proportional to $\sigma$. The lower it is, the more distant examples will be considered as <em>close</em>.</p>
+<p>The last step to be discussed is how to handle <em>multi-class</em> problems. We can use either <em>One versus Rest (OvR)</em> or <em>One versus One (OvO)</em>. Regarding the former, for each class, the binary svm is computed by treating all the instances that do not belong to that class, as the other class. For the evaluation, out of all the learned hyperplanes, we take that associated with the largest distance between itself and the instance. Basically, we choose the class associated with the largest value.<br>
+Regarding the latter, instead, we compute the svm for each pair of classes while for the evaluation, after running the point against each pair we take the winning (majority) class.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">clf_svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+<span class="n">parameters_svm</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;svm__kernel&#39;</span><span class="p">:(</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;rbf&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;svm__C&#39;</span><span class="p">:[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+    <span class="p">}</span>
+
+<span class="n">svm_best_scores</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">svm_best_params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">svm_best_models</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">pipe</span> <span class="ow">in</span> <span class="n">pipelines</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="n">pipeline_svm</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">pipe</span><span class="p">)</span>
+  <span class="n">pipeline_svm</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;svm&#39;</span><span class="p">,</span> <span class="n">clf_svm</span><span class="p">))</span>
+  <span class="n">search_svm</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline_svm</span><span class="p">,</span> <span class="n">parameters_svm</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv_splits</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="s1">&#39;f1_macro&#39;</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scores</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">search_svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+  <span class="n">svm_best_scores</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">search_svm</span><span class="o">.</span><span class="n">best_score_</span>
+  <span class="n">svm_best_params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">search_svm</span><span class="o">.</span><span class="n">best_params_</span>
+  <span class="n">svm_best_models</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">search_svm</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Best score for &#39;{name}&#39;: {search_svm.best_score_}&quot;</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Best parameters for &#39;{name}&#39;: {search_svm.best_params_}&quot;</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Best score for &#39;scaler&#39;: 0.9440219329814896
+Best parameters for &#39;scaler&#39;: {&#39;svm__C&#39;: 5, &#39;svm__kernel&#39;: &#39;rbf&#39;}
+
+Best score for &#39;resampling&#39;: 0.9413119320581119
+Best parameters for &#39;resampling&#39;: {&#39;svm__C&#39;: 5, &#39;svm__kernel&#39;: &#39;rbf&#39;}
+
+Best score for &#39;pca&#39;: 0.9418481430754658
+Best parameters for &#39;pca&#39;: {&#39;svm__C&#39;: 10, &#39;svm__kernel&#39;: &#39;rbf&#39;}
+
+Best score for &#39;all&#39;: 0.9397538869127681
+Best parameters for &#39;all&#39;: {&#39;svm__C&#39;: 10, &#39;svm__kernel&#39;: &#39;rbf&#39;}
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Decision-trees">Decision trees<a class="anchor-link" href="#Decision-trees">&#182;</a></h2>
 </div>
 </div>
@@ -14710,7 +14849,7 @@ Best parameters for &#39;all&#39;: {&#39;tree__criterion&#39;: &#39;entropy&#39;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are several techniques to overcome the shortcomings of the decision trees. Let $Z_1, ..., Z_n$ be $n$ different independent observation, each with variance $\sigma^2$, then, the variance of the sample mean $\overline{Z}$ is $\frac{\sigma^2}{n}$. Had we had multiple training sets, we would have built a different model for each of them averaging the resulting predictions. Since this is not practical, we cam adopt the <strong>bootstrap aggregation</strong> or <strong>bagging</strong> procedure, which stems from the fact that averaging a set of observations reduces the variance.<br>
+<p>There are several techniques to overcome the shortcomings of the decision trees. Let $Z_1, ..., Z_n$ be $n$ different independent observation, each with variance $\sigma^2$, then, the variance of the sample mean $\overline{Z}$ is $\frac{\sigma^2}{n}$. Had we had multiple training sets, we would have built a different model for each of them averaging the resulting predictions. Since this is not practical, we can adopt the <strong>bootstrap aggregation</strong> or <strong>bagging</strong> procedure, which stems from the fact that averaging a set of observations reduces the variance.<br>
 $B$ different bootstrapped training sets are generated by sampling uniformly at random with replacement from the training data. On those different sets, we can now build $B$ separate models and, in a classification scenario, the class is chosen for a test observation via majority voting among the different predictions.<br>
 Random forests provide a further improvement that allows to decorrelate the trees, making the average of the resulting trees less variable. When the bagged trees are built, at each split, instead of considering all the possible $p$ features, $m$ randomly selected predictors are chosen, usually $m=\sqrt{p}$.<br>
 Contrary to decision trees, random forests can be more accurate but they lose interpretability.</p>
@@ -14768,156 +14907,6 @@ Best score for &#39;pca&#39;: 0.9372791349903455
 Best parameters for &#39;pca&#39;: {&#39;forest__criterion&#39;: &#39;entropy&#39;, &#39;forest__n_estimators&#39;: 100}
 Best score for &#39;all&#39;: 0.9359711549576163
 Best parameters for &#39;all&#39;: {&#39;forest__criterion&#39;: &#39;entropy&#39;, &#39;forest__n_estimators&#39;: 50}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="SVM">SVM<a class="anchor-link" href="#SVM">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this section, the <strong>Support Vector Machines (SVM)</strong> learning paradigm is discussed. Different formulations are reviewed, relaxing step by step the assumptions about the data.</p>
-<p>The fundamental formulation of this tool is known as <strong>hard-svm</strong>, which assumes a rather strong assumption, that is, the linear separability of our data. Let $S = \{\pmb x_i, y_i \}_{i=1}^m$ be the training set of size $m$, where $\pmb x_i \in R^d$ and $y_i \in \{ -1, +1 \}$ (the generalization to a multiclass scenario will be explained later), the previous assumption can be stated as follows: $ \exists \, \pmb w \in R^d, b \in R : y_i\langle \pmb{w}, \pmb x_i \rangle + b \gt 0 \quad \forall i=1,..,m$.<br>
-Now is clear that we seek to find a hyperplane (to which $\pmb w$ is perpendicular and thus parametrizes it) that <em>better</em> separates the two classes. If there exists one hyperplane, there exist infinitely many. Instead of just picking one of the possible feasible solutions of the <strong>halfspace</strong> linear program, we seek to find a hyperplane so that the points in the distribution are the furthest possible. In particular, we want to maximize the <strong>margin</strong> which is the minimum distance between the points and the hyperplane itself (those points that are at the minimal distance from the separating hyperplane will later have an important role). The motivation is that the points are drawn from a probability distribution, there is a level of uncertainty of being at a specific position or there could be also noise. Consequently, the more room I have between the hyperplane and the points, the more they can move (or when new points arrive) and remain separated. It can be shown that the distance between a point $\pmb x$ and the hyperplane defined by $(\pmb w, b)$ is $\mid \langle \pmb{w}, \pmb x_i\rangle + b \mid$ when $\| \pmb w\|=1$. By putting all of this together we can derive the following formulation:
-\begin{equation}
-\begin{aligned}
-\underset{(\pmb w, b): \| w\|=1}{argmax} min_{i \in [m]} \quad &amp; \mid \langle \pmb{w}, \pmb x_i\rangle + b \mid\\
-\textrm{s.t.} \quad &amp; y_i(\langle \pmb{w}, \pmb x_i\rangle + b) \gt 0 \quad \forall i
-\end{aligned}
-\end{equation}
-which is equivalent to:
-\begin{equation}
-\begin{aligned}
-\underset{(\pmb w, b): \| w\|=1}{argmax} min_{i \in [m]} \quad &amp; y_i(\langle \pmb{w}, \pmb x_i\rangle + b)\\
-\end{aligned}
-\end{equation}
-It can be proved that this can be rewritten as a quadratic optimization problem (the objective is a convex quadratic function and the constraints are linear inequalities) which is more convenient and will come in handy later: 
-\begin{equation}
-\begin{aligned}
-(\pmb w_0, b_0) = 
-\underset{(\pmb w, b)}{argmin} \quad &amp; \| \pmb w\|^2 \\
-\textrm{s.t.} \quad &amp; y_i(\langle \pmb{w}, \pmb x_i\rangle + b) \geq 1 \quad \forall i
-\end{aligned}
-\end{equation}</p>
-<p>then, the <strong>margin</strong> parametrized by $\pmb{\hat{w}} = \frac{\pmb w_0}{\| \pmb w_0 \|}$ and $\pmb{\hat{b}} = \frac{b_0}{\| \pmb w_0 \|}$ is $\frac{1}{\| \pmb w_0 \|}$. The picture below shows this process (black is better).<br>
-<img src="https://raw.githubusercontent.com/RoboTuan/MML/main/Images/hard_svm.png" alt="hard_svm"></p>
-<p>A noteworthy observation is that the <strong>margin</strong>, $\gamma$, is scale sensitive. If we were to multiply each example $\pmb x_i$ in our dataset by $\alpha \gt 0$, the obtained <strong>margin</strong> which discriminates our linearly separable data would be of $\alpha \gamma$. In particular, the following holds true: a distribution over $R^d \times \{ \pm 1 \}$ is separable with a $(\gamma, \rho)$-margin if there exist a hyperplane parametrized by $(\pmb w^*, b^*)$ subject to $\| \pmb w\|=1$
-such that, with probability 1 over the choice of $(\pmb x, y)$ belonging to $D$, we have that $y(\langle \pmb w^*, \pmb x\rangle + b^*) \geq \gamma$ and $\| \pmb x \| \leq \rho$. The two inequalities respectively indicate data separability and that the examples are contained in a hyperball with radius $\rho$.<br>
-An important consequence of the previous statement is that, if a distribution $D$ is $(\gamma, \rho)$-margin, the sample complexity of the <strong>hard-svm</strong> does not depend on the dimension $d$, but on the square of the ratio $\frac{\rho}{\gamma}$.</p>
-<p>Up to this point, we have always assumed that the data was linearly separable. It is possible now to relax this constraint to yield what is known as <strong>soft-svm</strong>:
-\begin{equation}
-\begin{aligned}
-\underset{(\pmb w, b, \xi)}{argmin} \quad &amp; \lambda \| \pmb w \|^2 + \frac{1}{m}\sum_{i=1}^m \xi_i \\
-\textrm{s.t.} \quad &amp; y_i(\langle \pmb{w}, \pmb x_i\rangle + b) \geq 1 - \xi_i , \, \xi_i \geq 0 \quad \forall i
-\end{aligned}
-\end{equation}<br>
-Each sample is associated to a <em>slack</em> variable $\xi_i$. With this formulation, points can penetrate the margin, or even go on the other (wrong) side of the hyperplane. Intuitively, we could think of the <em>slack</em> variables as tolls, fines that we pay when the margin is crossed. In the context of <em>Scikit-Learn</em>, these slack variables are controlled by a hyperparameter $C$. The lower it is, the more mistakes are going to be allowed.<br>
-This problem can be rewritten as a <strong>regularized loss minimization (RLM)</strong> one:</p>
-$$
-\underset{(\pmb w, b)}{argmin} \quad \bigg( \lambda \| \pmb w \|^2 + L_S^{hinge}((\pmb w, b)) \bigg)
-$$<p><br>
-where we define $l^{hinge}((\pmb w, b), (\pmb x, y)) = \max \{ 0, 1 - y(\langle \pmb w, \pmb x \rangle + b) \}$</p>
-<p>and thus  $L_S^{hinge}((\pmb w, b)) = \mathbb{E}_S[l^{hinge}((\pmb w, b), (\pmb x, y))] = \frac{1}{m} \sum_{i=1}^m \max \{ 0, 1 - y_i(\langle \pmb w, \pmb x_i \rangle + b) \}$. 
-In this context, the <em>hinge loss</em> is a surrogate loss for the <em>zero-one loss</em>. It is a convex function and upper bounds the original loss.<br>
-<img src="https://raw.githubusercontent.com/RoboTuan/MML/main/Images/surrogate_loss.png" alt="surrogate_loss"></p>
-<p>We can now develop the dual formulation of the <strong>hard-svm</strong>. For simplicity, consider the homogeneous halfpace version by adding a feature to each of the $\pmb x_i$ and thus, increasing the dimension to $d+1$. As a consequence of the <em>Fritz John lemma</em>, we can rewrite the solution of the <strong>hard-svm</strong> problem, $\pmb w_0$ as a linear combination of the <strong>support vectors</strong>. Those are the vectors which lie on the margin such that: $\pmb w_0 = \sum_{i \in I} \alpha_i \pmb x_i$, with $\alpha_1, ..., \alpha_m \in R$ and $I = \{ i : | \langle \pmb w_0, \pmb{x} \rangle | = 1\}$. With the help of an auxiliary function that allows us to embed the constraints of the (primal) <strong>hard-svm</strong> into the objective function, it is possible to specify the dual as:
-$$
-\max_{\pmb \alpha \in R^m : \pmb \alpha \geq 0} \min_{\pmb w}
-\bigg( \frac{1}{2} \| \pmb w \|^2 + \sum_{i=1}^m \alpha_i(1-y_i \langle \pmb w, \pmb x_i \rangle) \bigg).
-$$
-By solving the inner minimization problem, it turns out that the solution is in the linear span of the examples, namely $\pmb w = \sum_{i=1}^m \alpha_i y_i \pmb x_i$. In particular, if a coefficient $\alpha_i$ is not associated to a <strong>support vector</strong>, it will be zero. It is possible to write the problem of svm in terms of scalar products of our data:
-$$
-\max_{\pmb \alpha \in R^m : \pmb \alpha \geq 0}
-\sum_{i=0}^m \alpha_i - \frac{1}{2} \sum_{i,j=0}^m \alpha_i \alpha_j y_i y_j
-\langle \pmb x_i, \pmb x_j \rangle
-$$
-we can now think of this as a parametric problem and define the Gram matrix $G$ such that $G_{i,j} = \langle \pmb x_i, \pmb x_j \rangle$. This is the powerful formulation that inspired the <strong>kernel</strong> method.</p>
-<p>It is not uncommon to have data that lives in a space which, not only is not linearly separable but also presents a highly convoluted manifold. One solution could be mapping the features of our data into a space of higher dimensions, hoping that it would be possible to find a linear separator in that space. In this way, it would not be unlikely to end up in a high dimensional space, with all the problems related to computational complexity and the curse of dimensionality. We can now understand how to avoid ths by exploiting the previous results.<br>
-<img src="https://raw.githubusercontent.com/RoboTuan/MML/main/Images/mapping.png" alt="mapping"></p>
-<p>Let $\psi : X \mapsto F$ be the mapping to some feature space $F$, formally a subset of a Hilbert space. For such mapping $\psi$, define a <strong>kernel</strong> $K$ as a function that implements inner product in the feature space, namely: $K(\pmb x, \pmb x') = \langle \psi(\pmb x), \psi(\pmb x') \rangle$. Informally, one could think of $K$ as a similarity function between the examples of our data and of the embedding $\psi$ as the mapping into a space where these similarities are computed as scalar products.<br>
-Considering the following learning rule:
-$$
-\pmb w^* = argmin_{\pmb w} f(\langle \pmb w, \psi(\pmb x_1) \rangle, ..., \langle \pmb w, \psi(\pmb x_m) \rangle) + \lambda \| \pmb w \|^2
-$$
-where $f : R^m \mapsto R$. Then, the <em>representer theorem</em> states that $\exists \pmb \alpha \in R^m$ such that $\pmb w^* = \sum_{i=0}^m \alpha_i \psi(\pmb x_i)$ with $\pmb w^* \in F$. Since the svm can be written as the previous learning rule, it means that  when a mapping $\psi$, as defined above, is applied to our data, it is possible to write the solution as a linear combination of the mapped data. Applying the same reasoning as in the dual problem, we can now write everything in terms of inner products, not between the original data points, but the mapped ones. Namely, we need to substitute $\langle \pmb x_i, \pmb x_j \rangle$ with the inner product computed in the Hilbert space $\langle \psi(\pmb x_i), \psi(\pmb x_j) \rangle_F$, the same applies to the Gram matrix. Since this matrix only depends on the inner products, it can be computed by using $K$. In other words, instead of computing $\psi$, since only the inner products among those mappings are needed, we seek to find a function $K$ that <em>mimics</em> this. One may ask when a function defined in the space of our data can be realised as inner product in some Hilbert space. The <em>mercer</em> theorem tells us if a function is actually a <strong>kernel</strong>.<br>
-A symmetric function $k : X \times X \mapsto R$ implements an inner product in some Hilbert space if and only if it is positive semidefinite. This translates into $G_{i,j}=K(\pmb x_i, \pmb x_j)$ being a positive semidefinite matrix.<br>
-A shortcoming of this approach is that if we were to have a huge amount of data, we would again introduce the curse of dimensionality. Since the solution exploits a linear combination of our original data, the number of instances is not to underestimate. It is true that the relevant points for the svm are only the <strong>support vectors</strong>, they are not known apriori.</p>
-<p>In this work, the adopted <strong>kernel</strong> is the <em>Gaussian</em> (or <em>rbf</em>) one. It is defined as follows:
-$$
-K(\pmb x, \pmb x') = e^{- \frac{\| \pmb x - \pmb x' \|^2}{2 \sigma}}.
-$$
-This <strong>kernel</strong> sets the inner space in the feature space close to zero if the instances are far away in the original domain, otherwise close to one if they are sufficiently <em>close</em>. The parameter $\sigma$ defines how far the influence of a single training example impacts this relationship. In <em>Scikit-Learn</em> this is controlled by $\gamma$ which is inversely proportional to $\sigma$, that is the lower it is, the more further examples are going to be considered as <em>close</em>.</p>
-<p>The last step to be discussed is how to handle <em>multi-class</em> problems. we can use either <em>One versus Rest (OvR)</em> or <em>One versus One (OvO)</em>. Regarding the former, for each class, the binary svm is computed by treating all the instances that do not belong to that class, as the other class. For the evaluation, out of all the learned hyperplanes, we take that associated with the largest distance between itself and the instance. Basically, we choose the class associated with the largest value.<br>
-Regarding the latter, instead, we compute the svm for each pair of classes while for the evaluation, after running the point against each pair we take the winning (majority) class.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">clf_svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
-<span class="n">parameters_svm</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;svm__kernel&#39;</span><span class="p">:(</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;rbf&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;svm__C&#39;</span><span class="p">:[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-    <span class="p">}</span>
-
-<span class="n">svm_best_scores</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="n">svm_best_params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="n">svm_best_models</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">pipe</span> <span class="ow">in</span> <span class="n">pipelines</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-  <span class="n">pipeline_svm</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">pipe</span><span class="p">)</span>
-  <span class="n">pipeline_svm</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;svm&#39;</span><span class="p">,</span> <span class="n">clf_svm</span><span class="p">))</span>
-  <span class="n">search_svm</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline_svm</span><span class="p">,</span> <span class="n">parameters_svm</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv_splits</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="s1">&#39;f1_macro&#39;</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scores</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-  <span class="n">search_svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-  <span class="n">svm_best_scores</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">search_svm</span><span class="o">.</span><span class="n">best_score_</span>
-  <span class="n">svm_best_params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">search_svm</span><span class="o">.</span><span class="n">best_params_</span>
-  <span class="n">svm_best_models</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">search_svm</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Best score for &#39;{name}&#39;: {search_svm.best_score_}&quot;</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Best parameters for &#39;{name}&#39;: {search_svm.best_params_}&quot;</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Best score for &#39;scaler&#39;: 0.9440219329814896
-Best parameters for &#39;scaler&#39;: {&#39;svm__C&#39;: 5, &#39;svm__kernel&#39;: &#39;rbf&#39;}
-
-Best score for &#39;resampling&#39;: 0.9413119320581119
-Best parameters for &#39;resampling&#39;: {&#39;svm__C&#39;: 5, &#39;svm__kernel&#39;: &#39;rbf&#39;}
-
-Best score for &#39;pca&#39;: 0.9418481430754658
-Best parameters for &#39;pca&#39;: {&#39;svm__C&#39;: 10, &#39;svm__kernel&#39;: &#39;rbf&#39;}
-
-Best score for &#39;all&#39;: 0.9397538869127681
-Best parameters for &#39;all&#39;: {&#39;svm__C&#39;: 10, &#39;svm__kernel&#39;: &#39;rbf&#39;}
-
 </pre>
 </div>
 </div>
@@ -15329,9 +15318,9 @@ Normalized confusion matrix:
 [9] <a href="https://en.wikipedia.org/wiki/Feature_scaling">https://en.wikipedia.org/wiki/Feature_scaling</a><br>
 [10] <a href="https://rikunert.com/SMOTE_explained">https://rikunert.com/SMOTE_explained</a><br>
 [11] Multiclass classification of dry beans using computer vision and machine learning techniques. Murat Koklu, Ilker Ali Ozkan<br>
-[12] <a href="https://scikit-learn.org/stable/modules/cross_validation.html#stratification">https://scikit-learn.org/stable/modules/cross_validation.html#stratification</a><br>
-[13] Isolation Forest. Fei Tony Liu, Kai Ming Ting, Zhi-Hua Zhou<br>
-[14] <a href="https://www.kaggle.com/janiobachmann/credit-fraud-dealing-with-imbalanced-datasets">https://www.kaggle.com/janiobachmann/credit-fraud-dealing-with-imbalanced-datasets</a></p>
+[12] Isolation Forest. Fei Tony Liu, Kai Ming Ting, Zhi-Hua Zhou<br>
+[13] <a href="https://www.kaggle.com/janiobachmann/credit-fraud-dealing-with-imbalanced-datasets">https://www.kaggle.com/janiobachmann/credit-fraud-dealing-with-imbalanced-datasets</a><br>
+[14] <a href="https://slideplayer.com/slide/13490590/">https://slideplayer.com/slide/13490590/</a></p>
 
 </div>
 </div>
